@@ -1,14 +1,7 @@
 import React from "react";
-import {
-  MessageCircle,
-  Instagram,
-  TreePalm,
-  ExternalLink,
-  MapPin,
-} from "lucide-react";
-
-import Logo, { ItalianFlag } from "../Logo";
-import { BRAND, whatsappLink } from "../../data/pizzaria";
+import { MessageCircle, Instagram, TreePalm, ExternalLink, MapPin } from "lucide-react";
+import Logo, { ItalianFlag } from "../components/Logo";
+import { BRAND, whatsappLink } from "../data/pizzaria";
 
 const NAV = [
   { label: "Início", href: "#inicio" },
@@ -33,32 +26,21 @@ export default function Footer() {
         <div className="grid gap-10 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <Logo />
-
             <p className="mt-5 text-sm text-flour-dim leading-relaxed max-w-xs">
-              Massa artesanal, ingredientes frescos e o sabor de verdade que
-              conquistou o bairro desde {BRAND.since}.
+              Massa artesanal, ingredientes frescos e o sabor de verdade que conquistou o bairro desde {BRAND.since}.
             </p>
-
             <div className="mt-5 flex items-center gap-2">
               <ItalianFlag className="h-4 w-6" />
-              <span className="text-xs text-flour-dim font-mono-ui">
-                Feito com paixão · São Paulo
-              </span>
+              <span className="text-xs text-flour-dim font-mono-ui">Feito com paixão · São Paulo</span>
             </div>
           </div>
 
           <div>
-            <h4 className="font-display font-bold text-sm uppercase tracking-wider text-flour">
-              Navegação
-            </h4>
-
+            <h4 className="font-display font-bold text-sm uppercase tracking-wider text-flour">Navegação</h4>
             <ul className="mt-4 space-y-2.5">
               {NAV.map((l) => (
                 <li key={l.href}>
-                  <a
-                    href={l.href}
-                    className="text-sm text-flour-dim hover:text-flour transition-colors"
-                  >
+                  <a href={l.href} className="text-sm text-flour-dim hover:text-flour transition-colors">
                     {l.label}
                   </a>
                 </li>
@@ -67,10 +49,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-display font-bold text-sm uppercase tracking-wider text-flour">
-              Peça pelo
-            </h4>
-
+            <h4 className="font-display font-bold text-sm uppercase tracking-wider text-flour">Peça pelo</h4>
             <ul className="mt-4 space-y-2.5">
               {SOCIAL.map((s) => (
                 <li key={s.label}>
@@ -89,37 +68,27 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-display font-bold text-sm uppercase tracking-wider text-flour">
-              Onde estamos
-            </h4>
-
+            <h4 className="font-display font-bold text-sm uppercase tracking-wider text-flour">Onde estamos</h4>
             <p className="mt-4 text-sm text-flour-dim leading-relaxed flex items-start gap-2">
               <MapPin className="h-4 w-4 text-balared mt-0.5 shrink-0" />
               {BRAND.address}
             </p>
-
-            <p className="mt-3 text-sm text-flour-dim">
-              {BRAND.phoneDisplay}
-            </p>
-
+            <p className="mt-3 text-sm text-flour-dim">{BRAND.phoneDisplay}</p>
             <a
               href={whatsappLink()}
               target="_blank"
               rel="noreferrer"
               className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#1b8a3a] px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90 transition"
             >
-              <MessageCircle className="h-4 w-4" />
-              Pedir pelo WhatsApp
+              <MessageCircle className="h-4 w-4" /> Pedir pelo WhatsApp
             </a>
           </div>
         </div>
 
         <div className="mt-12 pt-6 border-t border-crust-line flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-flour-dim">
-            © {new Date().getFullYear()} {BRAND.name}. Todos os direitos
-            reservados.
+            © {new Date().getFullYear()} {BRAND.name}. Todos os direitos reservados.
           </p>
-
           <p className="text-xs text-flour-dim font-mono-ui">
             DESDE {BRAND.since} · CNPJ 00.000.000/0001-00
           </p>
