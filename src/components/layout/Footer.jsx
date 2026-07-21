@@ -1,7 +1,8 @@
 import React from "react";
-import { MessageCircle, Instagram, TreePalm, ExternalLink, MapPin } from "lucide-react";
-import Logo, { ItalianFlag } from "../components/Logo";
-import { BRAND, whatsappLink } from "../data/pizzaria";
+import { Instagram } from "../ui/BrandIcons";
+import { MessageCircle, TreePalm, ExternalLink, MapPin } from "lucide-react";
+import Logo, { ItalianFlag } from "../ui/Logo";
+import { BRAND, whatsappLink } from "../../data/pizzaria";
 
 const NAV = [
   { label: "Início", href: "#inicio" },
@@ -59,7 +60,7 @@ export default function Footer() {
                     rel="noreferrer"
                     className="group inline-flex items-center gap-2 text-sm text-flour-dim hover:text-flour transition-colors"
                   >
-                    <s.icon className="h-4 w-4 text-balared" />
+                    <s.icon className="h-4 w-4 text-bala-red" />
                     {s.label}
                   </a>
                 </li>
@@ -70,7 +71,7 @@ export default function Footer() {
           <div>
             <h4 className="font-display font-bold text-sm uppercase tracking-wider text-flour">Onde estamos</h4>
             <p className="mt-4 text-sm text-flour-dim leading-relaxed flex items-start gap-2">
-              <MapPin className="h-4 w-4 text-balared mt-0.5 shrink-0" />
+              <MapPin className="h-4 w-4 text-bala-red mt-0.5 shrink-0" />
               {BRAND.address}
             </p>
             <p className="mt-3 text-sm text-flour-dim">{BRAND.phoneDisplay}</p>

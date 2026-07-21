@@ -1,37 +1,43 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ScrollToTop from './components/ScrollToTop';
-import Home from './pages/Home';
-import PageNotFound from './lib/PageNotFound'; // Se mover para src/pages, ajuste para './pages/PageNotFound'
-import { CartProvider } from './context/CartContext';
-import Navbar from './layouts/Navbar';
-import Footer from './layouts/Footer';
+import React from "react";
+import { CartProvider } from "./hooks/CartContext";
 
-function App() {
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
+import FloatingButtons from "./components/layout/FloatingButtons";
+import CartDrawer from "./components/layout/CartDrawer";
+
+import Hero from "./components/sections/Hero";
+import Promotions from "./components/sections/Promotions";
+import Menu from "./components/sections/Menu";
+import Ordering from "./components/sections/Ordering";
+import WhyChooseUs from "./components/sections/WhyChooseUs";
+import Reviews from "./components/sections/Reviews";
+import Instagram from "./components/sections/Instagram";
+import DeliveryPlatforms from "./components/sections/DeliveryPlatforms";
+import About from "./components/sections/About";
+import Contact from "./components/sections/Contact";
+
+export default function App() {
   return (
     <CartProvider>
-      <Router>
-        <ScrollToTop />
-        
-        <div className="flex flex-col min-h-screen bg-background text-foreground antialiased font-sans overflow-x-hidden">
-          {/* Header Global da Pizzaria */}
-          <Navbar />
-          
-          {/* Conteúdo Principal do Sistema */}
-          <main className="flex-grow flex flex-col relative z-10">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="*" element={<PageNotFound />} />
-            </Routes>
-          </main>
-          
-          {/* Rodapé Global da Pizzaria */}
-          <Footer />
-        </div>
-        
-      </Router>
+      <div className="min-h-screen bg-crust">
+        <Navbar />
+        <main>
+          <Hero />
+          <Promotions />
+          <Menu />
+          <Ordering />
+          <WhyChooseUs />
+          <Reviews />
+          <Instagram />
+          <DeliveryPlatforms />
+          <About />
+          <Contact />
+        </main>
+        <Footer />
+        <FloatingButtons />
+        <CartDrawer />
+      </div>
     </CartProvider>
   );
 }
-
-export default App;

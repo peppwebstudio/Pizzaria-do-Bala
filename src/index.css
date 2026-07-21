@@ -1,17 +1,175 @@
 @import "tailwindcss";
 
-/* =========================================
-   PWS Premium Template - Global Styles
-   ========================================= */
+@layer base {
+  :root {
+    /* Brand palette — Pizzaria do Bala */
+    --crust: #121212;
+    --crust-soft: #1a1a1a;
+    --crust-card: #1c1c1e;
+    --crust-line: #2a2a2d;
+    --bala-red: #D32F2F;
+    --bala-red-deep: #9b1c1c;
+    --ember: #FFB300;
+    --ember-soft: #ffc94d;
+    --italian-green: #1b8a3a;
+    --flour: #F5F5F5;
+    --flour-dim: #b8b8b8;
+
+    --background: 0 0% 7%;
+    --foreground: 96 0% 96%;
+    --card: 0 0% 11%;
+    --card-foreground: 96 0% 96%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 96 0% 96%;
+    --primary: 0 71% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 96 0% 96%;
+    --muted: 0 0% 16%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 41 100% 50%;
+    --accent-foreground: 0 0% 7%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 41 100% 50%;
+    --radius: 1rem;
+
+    --font-heading: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+}
 
 @theme {
-  /* Aqui no futuro podemos definir variáveis globais de marca para os clientes */
+  --color-crust: var(--crust);
+  --color-crust-soft: var(--crust-soft);
+  --color-crust-card: var(--crust-card);
+  --color-crust-line: var(--crust-line);
+  --color-bala-red: var(--bala-red);
+  --color-bala-red-deep: var(--bala-red-deep);
+  --color-ember: var(--ember);
+  --color-ember-soft: var(--ember-soft);
+  --color-italian-green: var(--italian-green);
+  --color-flour: var(--flour);
+  --color-flour-dim: var(--flour-dim);
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
 }
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 84px;
+  }
+
+  body {
+    background-color: var(--crust);
+    color: var(--flour);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--bala-red);
+    color: #fff;
+  }
 }
 
-body {
-  @apply antialiased text-slate-800 bg-white;
+@utility font-display {
+  font-family: var(--font-display);
 }
+
+@utility font-mono-ui {
+  font-family: var(--font-mono);
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility grain {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@utility glow-red {
+  box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.6);
+  animation: pulse-red 2.6s infinite;
+}
+
+@utility marquee-track {
+  animation: marquee 40s linear infinite;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes pulse-red {
+  0% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.55); }
+  70% { box-shadow: 0 0 0 16px rgba(211, 47, 47, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #121212; }
+::-webkit-scrollbar-thumb { background: #2a2a2d; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #D32F2F; }
