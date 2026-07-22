@@ -20,7 +20,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-crust via-transparent to-crust/40" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 pt-28 pb-16 w-full">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 pt-28 pb-28 sm:pb-32 w-full">
         <div className="max-w-2xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

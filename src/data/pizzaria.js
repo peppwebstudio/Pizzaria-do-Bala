@@ -3,19 +3,18 @@ export const BRAND = {
   name: "Pizzaria do Bala",
   tagline: "Sabor de verdade",
   since: "2022",
-  whatsapp: "5511999990000", // DDI+DDD+numero
-  phoneDisplay: "(11) 99999-0000",
-  address: "Rua das Pizzas, 150 — Vila Mariana, São Paulo/SP",
+  whatsapp: "5581992588530", // DDI+DDD+numero
+  phoneDisplay: "(81) 99258-8530",
+  address: "Rua José de Alencar, 116 — Boa vista, Recife/PE",
   hours: [
-    { day: "Terça a Quinta", time: "18h00 — 23h00" },
-    { day: "Sexta e Sábado", time: "18h00 — 00h00" },
-    { day: "Domingo", time: "18h00 — 23h00" },
+    { day: "Terça a Domingo", time: "17h00 — 23h00" },
     { day: "Segunda", time: "Fechado" },
   ],
-  instagram: "https://instagram.com",
-  ifood: "https://ifood.com.br",
-  linktree: "https://linktr.ee",
-  maps: "https://maps.google.com",
+  instagram: "https://www.instagram.com/pizzariadobala/",
+  ifood: "https://www.ifood.com.br/delivery/recife-pe/pizzaria-do-bala-boa-vista/1ea43b93-9345-44b6-a2c4-f17501b2add7",
+  linktree: "https://linktr.ee/pizzariadobala",
+  maps: "https://www.google.com/maps/place/Pizzaria+do+Bala/@-8.0611484,-34.8912152,17z/data=!3m1!4b1!4m6!3m5!1s0x7ab195a2bfa653b:0x35a6b3cf54ccab8d!8m2!3d-8.0611537!4d-34.8886349!16s%2Fg%2F11shkt65xq?entry=ttu&g_ep=EgoyMDI2MDcyMC4wIKXMDSoASAFQAw%3D%3D",
+  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.3948203125133!2d-34.891215190290794!3d-8.061148380510181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab195a2bfa653b%3A0x35a6b3cf54ccab8d!2sPizzaria%20do%20Bala!5e0!3m2!1spt-BR!2sbr!4v1784682034011!5m2!1spt-BR!2sbr",
 };
 
 export const whatsappLink = (msg) =>
@@ -35,7 +34,7 @@ export const PIZZAS = [
   },
   {
     id: "calabresa",
-    name: "Calabresa Especial",
+    name: "Calabresa",
     category: "Tradicionais",
     description: "Calabresa artesanal fatiada, cebola roxa, mussarela e orégano.",
     price: 54.9,

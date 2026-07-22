@@ -87,7 +87,7 @@ export default function CartDrawer() {
                   </div>
                   <p className="font-display font-bold text-lg">Seu carrinho está vazio</p>
                   <p className="text-sm text-flour-dim mt-2">
-                    Que tal uma Margherita ou uma Calabresa Especial para começar?
+                    Que tal uma Margherita ou uma Calabresa para começar?
                   </p>
                   <button
                     onClick={() => setIsOpen(false)}

@@ -6,8 +6,8 @@ import { BRAND, whatsappLink } from "../../data/pizzaria";
 
 const NAV = [
   { label: "Início", href: "#inicio" },
-  { label: "Cardápio", href: "#cardapio" },
   { label: "Promoções", href: "#promocoes" },
+  { label: "Cardápio", href: "#cardapio" },
   { label: "Sobre", href: "#sobre" },
   { label: "Avaliações", href: "#avaliacoes" },
   { label: "Contato", href: "#contato" },
@@ -28,11 +28,11 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Logo />
             <p className="mt-5 text-sm text-flour-dim leading-relaxed max-w-xs">
-              Massa artesanal, ingredientes frescos e o sabor de verdade que conquistou o bairro desde {BRAND.since}.
+              Massa artesanal, ingredientes frescos e o sabor de verdade que conquistou a Boa Vista e arredores desde {BRAND.since}.
             </p>
             <div className="mt-5 flex items-center gap-2">
               <ItalianFlag className="h-4 w-6" />
-              <span className="text-xs text-flour-dim font-mono-ui">Feito com paixão · São Paulo</span>
+              <span className="text-xs text-flour-dim font-mono-ui">Feito com paixão · Recife </span>
             </div>
           </div>
 

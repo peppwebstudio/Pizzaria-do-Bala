@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { MapPin, Clock, Phone, MessageCircle, ExternalLink } from "lucide-react";
+import { MapPin, Clock, Phone, MessageCircle } from "lucide-react";
 import { BRAND, whatsappLink } from "../../data/pizzaria";
 
 export default function Contact() {
@@ -17,6 +17,7 @@ export default function Contact() {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
+          {/* Informações de Contato */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -71,30 +72,21 @@ export default function Contact() {
             </a>
           </motion.div>
 
+          {/* Mapa do Google Funcional */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-[2rem] overflow-hidden border border-crust-line min-h-[340px] relative bg-crust-card"
+            className="relative rounded-[2rem] overflow-hidden border border-crust-line min-h-[340px] bg-crust-card"
           >
-            <div className="absolute inset-0 grid place-items-center bg-[radial-gradient(circle_at_center,#1c1c1e,#121212)]">
-              <div className="text-center px-8">
-                <div className="mx-auto h-16 w-16 rounded-2xl bg-bala-red/10 grid place-items-center mb-4">
-                  <MapPin className="h-8 w-8 text-bala-red" />
-                </div>
-                <p className="font-display font-bold text-lg">Pizzaria do Bala</p>
-                <p className="text-sm text-flour-dim mt-1">{BRAND.address}</p>
-                <a
-                  href={BRAND.maps}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-ember hover:underline"
-                >
-                  Abrir no Google Maps <ExternalLink className="h-4 w-4" />
-                </a>
-              </div>
-            </div>
+            <iframe
+              title="Localização da Pizzaria"
+              src={BRAND.mapEmbedUrl}
+              className="absolute inset-0 h-full w-full grayscale-[0.4] opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </motion.div>
         </div>
       </div>
